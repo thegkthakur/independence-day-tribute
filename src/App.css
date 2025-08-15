@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.card {
+  padding: 2em;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg) translateX(0px); }
+  25% { transform: rotate(2deg) translateX(2px); }
+  50% { transform: rotate(0deg) translateX(0px); }
+  75% { transform: rotate(-2deg) translateX(-2px); }
+  100% { transform: rotate(0deg) translateX(0px); }
+}
+
+.flag-container {
+  display: inline-block;
+  animation: wave 1.5s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.flag-img {
+  width: 10rem; /* 160px */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
