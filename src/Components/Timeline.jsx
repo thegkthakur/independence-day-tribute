@@ -14,7 +14,7 @@ const Timeline = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-green-700">
         India’s Independence Journey
       </h2>
-      <div className="mt-8 max-w-3xl mx-auto text-left">
+      <div className="mt-8 max-w-3xl mx-auto text-left cursor-pointer">
         {timelineData.map((e, i) => (
           <div key={i} onClick={() => toggleExpand(i)} className="relative pl-6 py-4">
             <div className="absolute left-0 top-6 h-full w-1 bg-saffron/60" />
