@@ -1,32 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { timelineData } from '../data/timelineData';
 
 const Timeline = () => {
-  const events = [
-    { year: 1857, text: "First War of Independence" },
-    { year: 1885, text: "Indian National Congress formed" },
-    { year: 1905, text: "Swadeshi Movement" },
-    { year: 1930, text: "Dandi March (Salt Satyagraha)" },
-    { year: 1942, text: "Quit India Movement" },
-    { year: 1947, text: "India gains Independence (15 Aug)" },
-    { year: 1950, text: "Constitution comes into effect (26 Jan)" },
-  ];
+
+  const [expanded, setExpanded] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpanded(expanded === index ? null : index);
+  };
+
   return (
     <section id="timeline" className="py-12 bg-white/70 backdrop-blur">
-        <h2 className="text-3xl md:text-4xl font-bold text-green-700">
-          India’s Independence Journey
-        </h2>
-        <div className="mt-8 max-w-3xl mx-auto text-left">
-          {events.map((e, i) => (
-            <div key={i} className="relative pl-6 py-4">
-              <div className="absolute left-0 top-6 h-full w-1 bg-saffron/60" />
-              <div className="inline-block rounded-lg bg-white shadow px-4 py-3 border">
-                <div className="font-semibold text-navyBlue">{e.year}</div>
-                <div className="text-sm">{e.text}</div>
-              </div>
+      <h2 className="text-3xl md:text-4xl font-bold text-green-700">
+        India’s Independence Journey
+      </h2>
+      <div className="mt-8 max-w-3xl mx-auto text-left">
+        {timelineData.map((e, i) => (
+          <div key={i} onClick={() => toggleExpand(i)} className="relative pl-6 py-4">
+            <div className="absolute left-0 top-6 h-full w-1 bg-saffron/60" />
+            <div className="inline-block rounded-lg bg-white shadow px-4 py-3 border">
+              <div className="text-sm font-semibold text-gray-800">{e.year} - {e.title}</div>
+              <div className="text-sm">{e.short}</div>
             </div>
-          ))}
-        </div>
-      </section>
+            {expanded === i && (
+              <div className="mt-3 text-gray-700 text-justify">
+                <p>{e.details}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
 
   )
 }
