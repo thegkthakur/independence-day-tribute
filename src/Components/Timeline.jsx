@@ -23,7 +23,7 @@ const Timeline = () => {
               <div className="text-sm">{e.short}</div>
             </div>
             {expanded === i && (
-              <div className="mt-3 text-gray-700 text-justify">
+              <div className="mt-3 p-4 text-gray-700 text-justify">
                 <p>{e.details}</p>
               </div>
             )}
