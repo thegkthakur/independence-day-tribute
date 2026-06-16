@@ -16,7 +16,7 @@ Frontend:
 
 1. Clone the repository
 
-git clone
+git clone https://github.com/thegkthakur/independence-day-tribute.git
 
 2. Install dependencies
 
