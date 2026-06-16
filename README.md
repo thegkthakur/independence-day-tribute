@@ -28,10 +28,8 @@ npm run dev
 
 ## Folder Structure
 
-src/
- ├── components/
- ├── pages/
- ├── data/
+<img width="692" height="1336" alt="image" src="https://github.com/user-attachments/assets/8a2ee40d-ee7c-4632-aff9-03e4f23bc8ef" />
+
 
 ## Screenshots
 
